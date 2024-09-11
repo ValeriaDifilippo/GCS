@@ -1,0 +1,14 @@
+name: GCS
+channels:
+  - conda-forge
+dependencies:
+  - r-base               
+  - r-ggplot2            
+  - r-dplyr              
+  - r-tidyverse          
+  - python=3.8           # Specify Python version (adjust as needed)
+  - jupyter              
+  - ipykernel
+  - numpy              
+  - pandas 
+  - plotly
