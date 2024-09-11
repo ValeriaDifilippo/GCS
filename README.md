@@ -115,8 +115,3 @@ jupyter-notebook bin/GCS_plot.ipynb
 Please if you use the GCS, cite:
 
 Valeria Difilippo, Karim H. Saba, Emelie Styring, Linda Magnusson, Jenny Nilsson, Michaela Nathrath, Daniel Baumhoer, Karolin H. Nord, Osteosarcomas With Few Chromosomal Alterations or Adult Onset Are Genetically Heterogeneous, Laboratory Investigation, Volume 104, Issue 1, 2024, 100283, ISSN 0023-6837, https://doi.org/10.1016/j.labinv.2023.100283.
-
-
-
-
-# GCS
