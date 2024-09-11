@@ -5,7 +5,7 @@ The genomic complexity score (GCS) is able to enumerate the whole-genome complex
 
 In a diploid genome (2N) the log2 ratio is typically equal to 0, and it is graphically represented by probes or bins that cluster around 0 (Figure 1A). A deviation from this situation means that there is a loss or a gain of a chromosome or pieces of it, resulting in an increase of the complexity of the genome (Figure 1B). Assuming that there is a correlation between a low genome complexity and few copy number alterations genome-wide, and vice versa for a highly complex genome, then the more complex a genome is, the more the probes or the bins should deviate from a diploid copy number profile state.
 
-![Fig_GCS](https://github.com/user-attachments/assets/b597b76a-ea2a-4dfe-b325-570c729da0a0)
+![Fig_GCS](https://github.com/user-attachments/assets/defcb606-b058-4f33-83a3-810eead509d3)
 
 Figure 1. Genomic complexity score (GCS) calculation.
 Examples of complexity for chromosome 17. The blue rectangle marks the range where the probes cluster and the dashed lines are the boundaries based on the two values obtained at +1.96 and -1.96 standard deviations. (A) The graph shows a diploid situation with a low complex genome profile where the probes cluster close to 0. (B) The p arm of chromosome 17 is subjected to big changes of log2 intensity representing amplifications and copy number changes.
@@ -100,7 +100,7 @@ A file containing the genomic complecity score of the whole genome.
 - _`plots/`_
 A subdirectory containing the plot for each chromosome.
   
-<img src="https://github.com/user-attachments/assets/f3d947d8-8498-4cdb-aa42-833c344b287c" alt="Untitled-1" width="50%">
+<img src="https://github.com/user-attachments/assets/18f96571-03a7-4e10-b8d4-d1cebfec242c" alt="Untitled-1" width="50%">
 
 ## Additional feature
 
