@@ -1,7 +1,7 @@
 # GCS
 The genomic complexity score (GCS) is able to enumerate the whole-genome complexity based on its respective copy number profile using SNP array or WGS data.
 
-## Rational
+## Rationale
 
 In a diploid genome (2N) the log2 ratio is typically equal to 0, and it is graphically represented by probes or bins that cluster around 0 (Figure 1A). A deviation from this situation means that there is a loss or a gain of a chromosome or pieces of it, resulting in an increase of the complexity of the genome (Figure 1B). Assuming that there is a correlation between a low genome complexity and few copy number alterations genome-wide, and vice versa for a highly complex genome, then the more complex a genome is, the more the probes or the bins should deviate from a diploid copy number profile state.
 
