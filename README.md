@@ -26,7 +26,7 @@ GCS is implemented in R and python. Before you can run this repository, make sur
 
 ### Installation
 
-Clone the GCS repository fro the Github Page and execute the following to generate a conda environment with all you need to run the GCS
+Clone the GCS repository from the Github Page and execute the following commands to generate a conda environment with all you need to run the GCS
 
 ```
 git clone https://github.com//ValeriaDifilippo/GCS
