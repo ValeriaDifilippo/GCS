@@ -57,22 +57,11 @@ for (f in filenames) {
     next
   }
   
-  # Remove the outliers by calculating the quantile (Q1, Q3)
-  Q1 <- quantile(data_clean$LogR, 0.25, na.rm = TRUE)
-  Q3 <- quantile(data_clean$LogR, 0.75, na.rm = TRUE)
-  IQR <- Q3 - Q1
-  lower_bound <- Q1 - 1.5 * IQR
-  upper_bound <- Q3 + 1.5 * IQR
-  data_no_outliers_iqr <- data_clean[data_clean >= lower_bound & data_clean <= upper_bound]
-  
-  # Calculate mean and standard deviation without outliers
-  mean_no_outliers_iqr <- mean(data_no_outliers_iqr, na.rm = TRUE)
-  sd_no_outliers_iqr <- sd(data_no_outliers_iqr, na.rm = TRUE)
-  
-  # Calculate the standard deviation normalized for all the genome
-  sd1 <- mean_no_outliers_iqr + (sd_no_outliers_iqr * 1.96)
-  sd2 <- mean_no_outliers_iqr - (sd_no_outliers_iqr * 1.96)
-  sdnorm <- (sd1 +- sd2) / 2
+  m <- mean(data_clean$LogR)
+  sd <- sd(data_clean$LogR)
+  sd1 <- m+(sd*1.96)
+  sd2 <- m-(sd*1.96)
+  sdnorm <- (sd1+-sd2)/2
   
   print(sdnorm)
   
@@ -97,24 +86,15 @@ for (f in filenames) {
     
     # Ensure chromosome names are handled properly
     chrom <- gsub("[/\\*?<>|:]", "_", chr)
+
+    m_chr <- mean(chr_data$LogR)
+    sd_chr <- sd(chr_data$LogR)
+    sd1_chr <- m_chr + (sd_chr * 1.96)
+    print(sd1_chr)
+    sd2_chr <- m_chr - (sd_chr * 1.96)
+    print(sd2_chr)
+    sdnorm_chr <- (sd1_chr + -sd2_chr) / 2
     
-    # Remove the outliers by calculating the quantile (Q1, Q3)
-    Q1_chr <- quantile(chr_data$LogR, 0.25, na.rm = TRUE)
-    Q3_chr <- quantile(chr_data$LogR, 0.75, na.rm = TRUE)
-    IQR_chr <- Q3_chr - Q1_chr
-    lower_bound_chr <- Q1_chr - 1.5 * IQR_chr
-    upper_bound_chr <- Q3_chr + 1.5 * IQR_chr
-    data_no_outliers_iqr_chr <- chr_data[chr_data >= lower_bound_chr & chr_data <= upper_bound_chr]
-    
-    # Calculate mean and standard deviation without outliers
-    mean_no_outliers_iqr_chr <- mean(data_no_outliers_iqr_chr, na.rm = TRUE)
-    sd_no_outliers_iqr_chr <- sd(data_no_outliers_iqr_chr, na.rm = TRUE)
-    
-    # Calculate the standard deviation normalized for all the genome
-    sd1_chr <- mean_no_outliers_iqr_chr + (sd_no_outliers_iqr_chr * 1.96)
-    sd2_chr <- mean_no_outliers_iqr_chr - (sd_no_outliers_iqr_chr * 1.96)
-    sdnorm_chr <- (sd1_chr +- sd2_chr) / 2
-   
     data_frame_chr <- data.frame(Case = sample_ID, GCS = sdnorm_chr, Chr = chrom, SD_pos = sd1_chr, SD_neg = sd2_chr)
     
     # Append results to the cumulative data frame
